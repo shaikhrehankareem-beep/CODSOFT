@@ -1,0 +1,29 @@
+import random
+import string
+
+print("=== Password Generator ===")
+
+length = int(input("Enter password length: "))
+
+print("\nSelect Password Complexity:")
+print("1. Letters Only")
+print("2. Letters + Numbers")
+print("3. Letters + Numbers + Special Characters")
+
+choice = input("Enter your choice (1/2/3): ")
+
+if choice == "1":
+    characters = string.ascii_letters
+elif choice == "2":
+    characters = string.ascii_letters + string.digits
+elif choice == "3":
+    characters = string.ascii_letters + string.digits + string.punctuation
+else:
+    print("Invalid choice!")
+    exit()
+
+password = ''.join(random.choice(characters) for _ in range(length))
+
+print("\nGenerated Password:")
+print(password)
+</html>
